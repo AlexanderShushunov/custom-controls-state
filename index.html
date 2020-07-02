@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <style>
+    .wrapper {
+      margin: 40px;
+      display: grid;
+      grid-template-columns: 300px;
+      grid-row-gap: 20px;
+    }
+
+    .indicate-state {
+      border: 2px solid gray;
+      outline: none;
+    }
+
+    .indicate-state:focus {
+      box-shadow: 0 0 0 4px aqua;
+    }
+
+    .indicate-state:hover {
+      background-color: lightgoldenrodyellow;
+    }
+
+    .indicate-state:active {
+      border-color: red;
+    }
+
+    .indicate-state-checkable {
+      outline: none;
+    }
+
+    .indicate-state-checkable:focus {
+      box-shadow: 0 0 0 4px aqua;
+    }
+
+    .indicate-state-checkable:hover {
+      height: 20px;
+      width: 20px;
+    }
+
+    .indicate-state-checkable:active {
+      transform: scaleX(0.5);
+    }
+  </style>
+</head>
+<div class="wrapper">
+  <input class="indicate-state">
+  <select class="indicate-state">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+    <option>Option 4</option>
+  </select>
+  <div>
+    <label>
+      <input class="indicate-state-checkable" type="radio" name="contact">
+      Email
+    </label>
+    <label>
+      <input class="indicate-state-checkable" type="radio" name="contact">
+      Phone
+    </label>
+  </div>
+  <div>
+    <label>
+      <input class="indicate-state-checkable" type="checkbox">
+      Email
+    </label>
+    <label>
+      <input class="indicate-state-checkable" type="checkbox">
+      Phone
+    </label>
+  </div>
+</div>
+</html>
