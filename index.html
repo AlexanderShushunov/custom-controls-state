@@ -3,75 +3,193 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <style>
-    .wrapper {
+    .columns {
+      display: flex;
+    }
+
+    .case-wrapper {
       margin: 40px;
       display: grid;
       grid-template-columns: 300px;
       grid-row-gap: 20px;
     }
 
-    .indicate-state {
+    .custom-state {
       border: 2px solid gray;
       outline: none;
     }
 
-    .indicate-state:focus {
+    .custom-state:focus {
       box-shadow: 0 0 0 4px aqua;
     }
 
-    .indicate-state:hover {
+    .custom-state:hover {
       background-color: lightgoldenrodyellow;
     }
 
-    .indicate-state:active {
+    .custom-state:active {
       border-color: red;
     }
 
-    .indicate-state-checkable {
+    .custom-state-checkable {
       outline: none;
     }
 
-    .indicate-state-checkable:focus {
+    .custom-state-checkable:focus {
       box-shadow: 0 0 0 4px aqua;
     }
 
-    .indicate-state-checkable:hover {
+    .custom-state-checkable:hover {
       height: 20px;
       width: 20px;
     }
 
-    .indicate-state-checkable:active {
+    .custom-state-checkable:active {
       transform: scaleX(0.5);
+    }
+
+    .custom-outline:focus {
+      outline: 2px blue solid;
+      outline-offset: 2px;
+    }
+
+    .custom-outline--auto:focus {
+      outline: 2px blue auto;
+      outline-offset: 4px;
     }
   </style>
 </head>
-<div class="wrapper">
-  <input class="indicate-state">
-  <select class="indicate-state">
-    <option>Option 1</option>
-    <option>Option 2</option>
-    <option>Option 3</option>
-    <option>Option 4</option>
-  </select>
-  <div>
-    <label>
-      <input class="indicate-state-checkable" type="radio" name="contact">
-      Email
-    </label>
-    <label>
-      <input class="indicate-state-checkable" type="radio" name="contact">
-      Phone
-    </label>
+<div class="columns">
+  <div class="case-wrapper">
+    <h2>Custom styles</h2>
+    <input class="custom-state">
+    <select class="custom-state">
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+      <option>Option 4</option>
+    </select>
+    <div>
+      <label>
+        <input class="custom-state-checkable" type="radio" name="contact">
+        Email
+      </label>
+      <label>
+        <input class="custom-state-checkable" type="radio" name="contact">
+        Phone
+      </label>
+    </div>
+    <div>
+      <label>
+        <input class="custom-state-checkable" type="checkbox">
+        Email
+      </label>
+      <label>
+        <input class="custom-state-checkable" type="checkbox">
+        Phone
+      </label>
+    </div>
+    <button class="custom-state">Button</button>
+    <a href="javascript:void(0)" class="custom-state">Link</a>
   </div>
-  <div>
-    <label>
-      <input class="indicate-state-checkable" type="checkbox">
-      Email
-    </label>
-    <label>
-      <input class="indicate-state-checkable" type="checkbox">
-      Phone
-    </label>
+
+  <div class="case-wrapper">
+    <h2>Default styles</h2>
+    <input>
+    <select>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+      <option>Option 4</option>
+    </select>
+    <div>
+      <label>
+        <input type="radio" name="contact">
+        Email
+      </label>
+      <label>
+        <input type="radio" name="contact">
+        Phone
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox">
+        Email
+      </label>
+      <label>
+        <input type="checkbox">
+        Phone
+      </label>
+    </div>
+    <button>Button</button>
+    <a href="javascript:void(0)">Link</a>
+  </div>
+
+  <div class="case-wrapper">
+    <h2>Outline styles</h2>
+    <input class="custom-outline">
+    <select class="custom-outline">
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+      <option>Option 4</option>
+    </select>
+    <div>
+      <label>
+        <input type="radio" name="contact" class="custom-outline">
+        Email
+      </label>
+      <label>
+        <input type="radio" name="contact" class="custom-outline">
+        Phone
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" class="custom-outline">
+        Email
+      </label>
+      <label>
+        <input type="checkbox" class="custom-outline">
+        Phone
+      </label>
+    </div>
+    <button class="custom-outline">Button</button>
+    <a href="javascript:void(0)" class="custom-outline">Link</a>
+  </div>
+
+  <div class="case-wrapper">
+    <h2>Outline styles (auto)</h2>
+    <input class="custom-outline--auto">
+    <select class="custom-outline--auto">
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+      <option>Option 4</option>
+    </select>
+    <div>
+      <label>
+        <input type="radio" name="contact" class="custom-outline--auto">
+        Email
+      </label>
+      <label>
+        <input type="radio" name="contact" class="custom-outline--auto">
+        Phone
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" class="custom-outline--auto">
+        Email
+      </label>
+      <label>
+        <input type="checkbox" class="custom-outline--auto">
+        Phone
+      </label>
+    </div>
+    <button class="custom-outline--auto">Button</button>
+    <a href="javascript:void(0)" class="custom-outline--auto">Link</a>
   </div>
 </div>
 </html>
