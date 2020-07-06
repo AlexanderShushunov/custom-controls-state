@@ -88,12 +88,12 @@
   </style>
 </head>
 <script>
-function onMousedown (event) {
+function onMousedown () {
   document.body.classList.remove('user-use-keyboards')
 }
 
-function onKeydown ({ code }) {
-  if (code === 'Tab') {
+function onKeydown (event) {
+  if (event.key === 'Tab') {
     document.body.classList.add('user-use-keyboards')
   }
 }
