@@ -15,6 +15,13 @@
       grid-row-gap: 20px;
     }
 
+    .fix-button {
+      -webkit-tap-highlight-color: transparent;
+    }
+    .fix-button::-moz-focus-inner {
+      border: none;
+    }
+
     .custom-state {
       border: 2px solid gray;
       outline: none;
@@ -30,23 +37,6 @@
 
     .custom-state:active {
       border-color: red;
-    }
-
-    .custom-state-checkable {
-      outline: none;
-    }
-
-    .custom-state-checkable:focus {
-      box-shadow: 0 0 0 4px aqua;
-    }
-
-    .custom-state-checkable:hover {
-      height: 20px;
-      width: 20px;
-    }
-
-    .custom-state-checkable:active {
-      transform: scaleX(0.5);
     }
 
     .custom-outline:focus {
@@ -68,23 +58,39 @@
       box-shadow: 0 0 0 4px aqua;
     }
 
-    .custom-state-with-body {
+    .custom-state-with-body-flag {
       border: 2px solid gray;
       outline: none;
     }
 
-    .custom-state-with-body:hover {
+    .custom-state-with-body-flag:hover {
       background-color: lightgoldenrodyellow;
     }
 
-    .custom-state-with-body:active {
+    .custom-state-with-body-flag:active {
       border-color: red;
     }
 
-
-    body.user-use-keyboards .custom-state-with-body:focus {
+    body.user-use-keyboards .custom-state-with-body-flag:focus {
       box-shadow: 0 0 0 4px aqua;
     }
+
+    .checkable-label {
+      position: relative;
+    }
+
+    .checkable-outline {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    body.user-use-keyboards .checkable-with-body-flag:focus + .checkable-outline {
+      box-shadow: 0 0 0 4px aqua;
+    }
+
   </style>
 </head>
 <script>
@@ -115,25 +121,25 @@ window.addEventListener('keydown', onKeydown)
     </select>
     <div>
       <label>
-        <input class="custom-state-checkable" type="radio" name="contact">
+        <input class="custom-state" type="radio" name="contact">
         Email
       </label>
       <label>
-        <input class="custom-state-checkable" type="radio" name="contact">
+        <input class="custom-state" type="radio" name="contact">
         Phone
       </label>
     </div>
     <div>
       <label>
-        <input class="custom-state-checkable" type="checkbox">
+        <input class="custom-state" type="checkbox">
         Email
       </label>
       <label>
-        <input class="custom-state-checkable" type="checkbox">
+        <input class="custom-state" type="checkbox">
         Phone
       </label>
     </div>
-    <button class="custom-state">Button</button>
+    <button class="custom-state fix-button">Button</button>
     <a href="javascript:void(0)" class="custom-state">Link</a>
   </div>
 
@@ -254,49 +260,53 @@ window.addEventListener('keydown', onKeydown)
 
   <div class="case-wrapper">
     <h2>Custom styles + flag on body</h2>
-    <input class="custom-state-with-body">
-    <select class="custom-state-with-body">
+    <input class="custom-state-with-body-flag">
+    <select class="custom-state-with-body-flag">
       <option>Option 1</option>
       <option>Option 2</option>
       <option>Option 3</option>
       <option>Option 4</option>
     </select>
     <div>
-      <label>
-        <input class="custom-state-with-body" type="radio" name="contact">
+      <label class="checkable-label">
+        <input class="checkable-with-body-flag" type="radio" name="contact">
         Email
+        <span class="checkable-outline" />
       </label>
-      <label>
-        <input class="custom-state-with-body" type="radio" name="contact">
+      <label class="checkable-label">
+        <input class="checkable-with-body-flag" type="radio" name="contact">
         Phone
+        <span class="checkable-outline" />
       </label>
     </div>
     <div>
-      <label>
-        <input class="custom-state-with-body" type="checkbox">
+      <label class="checkable-label">
+        <input class="checkable-with-body-flag" type="checkbox">
         Email
+        <span class="checkable-outline" />
       </label>
-      <label>
-        <input class="custom-state-with-body" type="checkbox">
+      <label class="checkable-label">
+        <input class="checkable-with-body-flag" type="checkbox">
         Phone
+        <span class="checkable-outline" />
       </label>
     </div>
-    <button class="custom-state-with-body">Button</button>
-    <a href="javascript:void(0)" class="custom-state-with-body">Link</a>
+    <button class="custom-state-with-body-flag fix-button">Button</button>
+    <a href="javascript:void(0)" class="custom-state-with-body-flag">Link</a>
     <button
-        class="custom-state-with-body"
+        class="custom-state-with-body-flag fix-button"
         onclick="event.stopPropagation()"
     >
       Button (stop propagation)
     </button>
     <button
-        class="custom-state-with-body"
+        class="custom-state-with-body-flag fix-button"
         onclick="event.stopImmediatePropagation()"
     >
       Button (stop Immediate Propagation)
     </button>
     <button
-        class="custom-state-with-body"
+        class="custom-state-with-body-flag fix-button"
         onclick="event.preventDefault()">
       Button (prevent default)
     </button>
